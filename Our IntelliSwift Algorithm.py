@@ -265,7 +265,7 @@ class TicTacToe:
                     self.canvas.create_text(j * 100 + 50, i * 100 + 50, text="O", font=("Arial", 24), fill="black")
 
     def reset_game(self):
-        self.board = [[" " for _ in range(sself.size)] for _ in range(self.size)]
+        self.board = [[" " for _ in range(self.size)] for _ in range(self.size)]
         self.DEFENSE = []
         self.ATTACK = []
         self.update_board()
