@@ -49,7 +49,8 @@ class TicTacToe:
         
         self.create_grid()
         self.canvas.bind("<Button-1>", self.make_move)
-
+        
+    # To draw the grid with size which the user select it.
     def create_grid(self):
         for i in range(self.size):
             for j in range(self.size):
@@ -80,18 +81,21 @@ class TicTacToe:
         # player_value may be X, or O.
         empty_cells = []
         temp = []
+        # to get the available cells in the same row.
         if all(self.board[i][col] in (" ", player_value) for col in range(self.size)):
             for col in range(self.size):
                 if self.board[i][col] == " " and col !=j:
                     temp.append((i, col))
             empty_cells.append(temp)
             temp = []
+        # to get the available cells in the same column.
         if all(self.board[row][j] in (" ", player_value) for row in range(self.size)):
             for row in range(self.size):
                 if self.board[row][j] == " " and row !=i:
                     temp.append((row, j))
             empty_cells.append(temp)
             temp = []
+        # to get the available cells in the main diagonal.
         if i == j:
             if all(self.board[d][d] in (" ", player_value) for d in range(self.size)):
                 for d in range(self.size):
@@ -99,6 +103,7 @@ class TicTacToe:
                         temp.append((d, d))
                 empty_cells.append(temp)
                 temp = []
+        # to get the available cells in the inverse diag.
         if i + j == self.size - 1:
             if all(self.board[d][self.size - 1 - d] in (" ", player_value) for d in range(self.size)):
                 for d in range(self.size):
@@ -124,7 +129,7 @@ class TicTacToe:
         elif mode == 1:
             data[:] = [inner_list for inner_list in data if tuple_to_remove not in inner_list]
     
-
+    # This function is to determine the shared indices in the DEFENSE and ATTACK lists.
     def find_intersection(self):
         # Flatten the lists
         flat_a = {tuple(t) for sublist in self.ATTACK for t in sublist}
@@ -230,6 +235,7 @@ class TicTacToe:
         self.ATTACK.extend(b)
         self.ATTACK = sorted(self.ATTACK, key=len)
 
+    # To check if there a winner or if there is no winner.
     def check_game_over(self):
         winner = self.check_winner()
         if winner:
@@ -263,7 +269,8 @@ class TicTacToe:
                 elif self.board[i][j] == "O":
                     self.canvas.create_oval(j * 100 + 10, i * 100 + 10, j * 100 + 90, i * 100 + 90, fill="red")
                     self.canvas.create_text(j * 100 + 50, i * 100 + 50, text="O", font=("Arial", 24), fill="black")
-
+    
+    # When the user click on reset game or there is a winner then this function will called to reset the game
     def reset_game(self):
         self.board = [[" " for _ in range(self.size)] for _ in range(self.size)]
         self.DEFENSE = []
