@@ -65,3 +65,20 @@ winning possibilities for the algorithm are then added to the attack row.
 • When both the defense and attack rows are empty, it means no one can 
 win.
 • When a player places his char X or Y in a row, column, or in diagonal.
+
+
+
+## Sample of our algorithm decisions
+Suppose that the O player is Our algorithm, and X player is the opponent, and the X player begin the game and placed the X char in (0,0) position as shown below. 
+Note: the used colors in the grid are to show these meanings:
+ 	Position in DEFENSE list based on specific X position.
+ 	Position in ATTACK list based on specific O position.
+ 	Position in both lists DEFENSE and ATTACK.
+
+![image](https://github.com/user-attachments/assets/798aca6f-31c5-4a62-98d7-b7dd0639650b)
+
+![image](https://github.com/user-attachments/assets/37cb59bf-be91-443d-b802-6e8821b77b58)
+
+![image](https://github.com/user-attachments/assets/5aa0b8d9-211a-481b-bd0e-2f2c37c5a007)
+
+
