@@ -71,10 +71,25 @@ win.
 ## Sample of our algorithm decisions
 
 Suppose that Our algorithm is O, and the opponent is X player.
-* In this case, our algorithm will take (1,1) possition because this location can generate a large of possibilities in the next move to make our algorithm win.
+1. In this case, our algorithm will take (1,1) possition because this location can generate a large of possibilities in the next move to make our algorithm win.
 ![image](https://github.com/user-attachments/assets/798aca6f-31c5-4a62-98d7-b7dd0639650b)
 
-* In this case, Our algorithm will take the (1,0) position to protect X player (opponent) from winning.
-![image](https://github.com/user-attachments/assets/37cb59bf-be91-443d-b802-6e8821b77b58)
+2. Sample defensive move. Our algorithm will take (1,0) position to prevent the opponent from winning.
+
+![image](https://github.com/user-attachments/assets/7e045733-a3d7-41b0-b78e-4b6c6d117c0d)
+
+  This decision based on the content of the DEFENSE list.
+
+![image](https://github.com/user-attachments/assets/eafe5417-27c9-4573-b706-6450e359ad41)
+
+   
+3. Sample offensive move. Our algorithm will take (2,0) position to win in the game.
+
+![image](https://github.com/user-attachments/assets/426716b1-6e23-49ff-a559-ead72e70843b)
+
+  This decision based on the content of the ATTACK list.
+
+![image](https://github.com/user-attachments/assets/c26756e7-9552-4ba8-a90b-a48908052b63)
+
 
 
