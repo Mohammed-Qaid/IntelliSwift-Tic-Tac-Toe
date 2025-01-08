@@ -180,6 +180,10 @@ class TicTacToe:
         if len(self.ATTACK)==0 and len(self.DEFENSE)==0:
             arr = [[(i, j), self.get_available_cells(i, j, "O")] for i in range(self.size) for j in range(self.size) if self.board[i][j]==" "]
             if len(arr):
+                if all(len(temp[1])==0 for temp in arr):
+                    messagebox.showinfo("Game Over", "No winner!\nPlease try again.")
+                    self.reset_game()
+                    return
                 sorted_data = sorted(arr, key=lambda x: len(x[1]))
                 for x in sorted_data:
                     print(x)
